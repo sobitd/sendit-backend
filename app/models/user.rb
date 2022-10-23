@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :email_address, :phone_number, :username, :password
+validates_presence_of :first_name, :last_name, :email_address, :phone_number, :username, :password
 end
