@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_23_111437) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_23_182049) do
+  create_table "parcels", force: :cascade do |t|
+    t.string "recipient_address"
+    t.string "recipient_name"
+    t.string "recipient_contact"
+    t.integer "weight"
+    t.string "from"
+    t.string "destination"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
