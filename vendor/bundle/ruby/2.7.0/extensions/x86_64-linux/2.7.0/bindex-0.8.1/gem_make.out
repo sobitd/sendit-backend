@@ -1,0 +1,15 @@
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20221024-174973-2j74jw sitelibdir\=./.gem.20221024-174973-2j74jw clean
+
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20221024-174973-2j74jw sitelibdir\=./.gem.20221024-174973-2j74jw
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20221024-174973-2j74jw sitelibdir\=./.gem.20221024-174973-2j74jw install
+/usr/bin/install -m 0755 cruby.so ./.gem.20221024-174973-2j74jw/skiptrace/internal

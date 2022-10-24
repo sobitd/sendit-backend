@@ -57,7 +57,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem 'phonelib', '~> 0.7.4'
-  gem 'email_validator'  
+  gem 'truemail', '~> 2.7', '>= 2.7.5' 
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

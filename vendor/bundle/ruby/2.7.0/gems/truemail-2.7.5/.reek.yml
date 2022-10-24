@@ -1,0 +1,87 @@
+detectors:
+  IrresponsibleModule:
+    enabled: false
+
+  NestedIterators:
+    exclude:
+      - Truemail::ConfigurationHelper#configuration_block
+      - Truemail::Validate::Smtp#not_includes_user_not_found_errors
+
+  TooManyStatements:
+    exclude:
+      - Truemail::Validate::Smtp::Request#run
+      - Truemail::Validate::Smtp#run
+      - Truemail::Validate::Mx#hosts_from_cname_records
+      - Truemail::Configuration#logger=
+      - Truemail::Validate::Smtp::Request#initialize
+      - Truemail::Validate::Smtp::Request::Session#initialize
+
+  TooManyInstanceVariables:
+    exclude:
+     - Truemail::Configuration
+     - Truemail::Validate::Smtp::Request
+
+  TooManyMethods:
+    exclude:
+     - Truemail::Configuration
+
+  Attribute:
+    exclude:
+      - Truemail::Configuration#whitelist_validation
+      - Truemail::Configuration#not_rfc_mx_lookup_flow
+      - Truemail::Configuration#smtp_fail_fast
+      - Truemail::Configuration#smtp_safe_check
+      - Truemail::Wrapper#attempts
+
+  UtilityFunction:
+    exclude:
+      - Truemail::Audit::Base#verifier_domain
+      - Truemail::Configuration#logger_options
+      - Truemail::Configuration#match_regex?
+      - Truemail::Configuration#regex_by_method
+      - Truemail::Dns::Worker#nameserver_port
+      - Truemail::Log::Serializer::Base#errors
+      - Truemail::Log::Serializer::ValidatorBase#replace_invalid_chars
+      - Truemail::Validator#select_validation_type
+      - Truemail::Validator#constantize
+      - Truemail::Validate::Base#configuration
+      - Truemail::Validate::Mx#null_mx?
+      - Truemail::Validate::Mx#a_record
+      - Truemail::Validate::Smtp::Request#compose_from
+      - Truemail::Validate::Smtp::Request::Session#old_net_smtp?
+
+  ControlParameter:
+    exclude:
+      - Truemail::GenerateEmailHelper#calculate_email_size
+      - Truemail::Worker#success
+      - Truemail#raise_unless
+      - Truemail::Configuration#raise_unless
+      - Truemail#determine_configuration
+
+  FeatureEnvy:
+    exclude:
+      - Truemail::Validate::Smtp#not_includes_user_not_found_errors
+      - Truemail::GenerateEmailHelper#prepare_user_name
+      - Truemail::ConfigurationHelper#create_configuration
+      - Truemail::Log::Serializer::Base#smtp_debug
+      - Truemail::Log::Serializer::Text#data_composer
+      - Truemail::Log::Serializer::ValidatorBase#smtp_debug
+      - Truemail::Log::Serializer::ValidatorText#data_composer
+
+  NilCheck:
+    exclude:
+      - Truemail::Validator#result_not_changed?
+      - Truemail::Configuration#logger=
+      - Truemail::Validator#run
+
+  BooleanParameter:
+    exclude:
+      - Truemail::Configuration#logger=
+
+  TooManyConstants:
+    exclude:
+      - Truemail::Configuration
+      - Truemail::RegexConstant
+
+exclude_paths:
+  - spec/support/helpers

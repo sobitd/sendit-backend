@@ -1,0 +1,16 @@
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20221024-8945-zvr1mn sitelibdir\=./.gem.20221024-8945-zvr1mn clean
+
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20221024-8945-zvr1mn sitelibdir\=./.gem.20221024-8945-zvr1mn
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /home/moringa/Development/code/capstone/sendit-backend/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20221024-8945-zvr1mn sitelibdir\=./.gem.20221024-8945-zvr1mn install
+/usr/bin/install -m 0755 unf_ext.so ./.gem.20221024-8945-zvr1mn

@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Order, type: :model do
-  # it 'should allow valid values' do
-  #   Model::CONSTANT.each do |v|
-  #     should allow_value(v).for(:order_status)
-  #   end
-  # end
+  describe 'Validations' do
+    it { should validate_presence_of(:order_status) }
+  end
 
-  it { should belong_to(:user, :parcel).without_validating_presence}
+  describe 'Associations' do
+    it { should belong_to(:user).without_validating_presence }
+    it { should belong_to(:parcel).without_validating_presence }
+  end
 end
