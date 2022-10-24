@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_123246) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_132147) do
   create_table "bills", force: :cascade do |t|
     t.float "total_cost"
     t.datetime "created_at", null: false
@@ -46,6 +46,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_123246) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order_id", null: false
+    t.integer "user_id", null: false
+    t.index ["order_id"], name: "index_notifications_on_order_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -95,6 +105,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_123246) do
   add_foreign_key "location_assigneds", "locations"
   add_foreign_key "location_assigneds", "parcel_carriers"
   add_foreign_key "locations", "users"
+  add_foreign_key "notifications", "orders"
+  add_foreign_key "notifications", "users"
   add_foreign_key "orders", "parcels"
   add_foreign_key "orders", "users"
   add_foreign_key "parcels", "users"
