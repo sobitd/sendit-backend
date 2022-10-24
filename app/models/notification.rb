@@ -1,5 +1,5 @@
 class Notification < ApplicationRecord
-  belongs_to :order
-  belongs_to :user
+  has_many :orders
+  has_many :users
   validates :message, presence: true
 end

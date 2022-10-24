@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Notification, type: :model do
   describe 'Associations' do
-    it { should belong_to(:order) }
-    it { should belong_to(:user) }
+    # it { should have_many(:orders) }
+    it { should have_many(:users) }
   end
 
   describe 'Validations' do
