@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_122729) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_123246) do
   create_table "bills", force: :cascade do |t|
     t.float "total_cost"
     t.datetime "created_at", null: false
@@ -26,6 +26,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_122729) do
     t.integer "bill_id", null: false
     t.index ["bill_id"], name: "index_deliveries_on_bill_id"
     t.index ["order_id"], name: "index_deliveries_on_order_id"
+  end
+
+  create_table "location_assigneds", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "parcel_carrier_id", null: false
+    t.integer "location_id", null: false
+    t.index ["location_id"], name: "index_location_assigneds_on_location_id"
+    t.index ["parcel_carrier_id"], name: "index_location_assigneds_on_parcel_carrier_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -83,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_122729) do
 
   add_foreign_key "deliveries", "bills"
   add_foreign_key "deliveries", "orders"
+  add_foreign_key "location_assigneds", "locations"
+  add_foreign_key "location_assigneds", "parcel_carriers"
   add_foreign_key "locations", "users"
   add_foreign_key "orders", "parcels"
   add_foreign_key "orders", "users"
