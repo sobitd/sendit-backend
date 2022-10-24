@@ -8,3 +8,7 @@ RSpec.describe Parcel, type: :model do
     it { should validate_presence_of(field) }
   end
 end
+
+describe Parcel do
+  it { should belong_to(:user) }
+end

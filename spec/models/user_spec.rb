@@ -8,3 +8,10 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(field) }
   end
 end
+
+describe User do
+  it 'should have many parcels' do
+    user = User.reflect_on_association(:parcels)
+    expect(user.macro).to eq(:has_many)
+  end
+end
