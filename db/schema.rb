@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_103356) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_120536) do
   create_table "bills", force: :cascade do |t|
     t.float "total_cost"
     t.datetime "created_at", null: false
@@ -36,6 +36,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_103356) do
     t.integer "parcel_id", null: false
     t.index ["parcel_id"], name: "index_orders_on_parcel_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "parcel_carriers", force: :cascade do |t|
+    t.integer "employee_code"
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "parcels", force: :cascade do |t|
