@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
     
-    skip_before_action :authorized, only: [:create]
+    # skip_before_action :authorized, only: [:create, :index]
+    skip_before_action :verify_authenticity_token
+    
+    def index 
+        user = User.all
+        render json: user
+    end
 
     ##Signing up a new user
     def create
@@ -14,10 +20,10 @@ class UsersController < ApplicationController
 
     #autologin feature
     #if the user leaves the page, they will not be logged out
-    def show
-        user = User.find(session[:user_id])
-        render json: user
-    end
+    # def show
+    #     user = User.find(session[:user_id])
+    #     render json: user
+    # end
 
     private
 
