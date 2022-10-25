@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates_format_of :phone_number, with: number_regex,
                                      message: 'Only positive number without spaces are allowed'
   has_many :parcels
+  
+  has_secure_password
 end
