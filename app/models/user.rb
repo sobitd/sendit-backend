@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  ## the macro to encrypt users passwords
   has_secure_password
 
   validates_presence_of :first_name, :last_name, :phone_number, :username, :password
