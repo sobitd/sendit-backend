@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'sessions#home'
 
-  resources :users
-  resources :orders
+  resources :users, only: [:create, :show, :index]
+  resources :parcels, only: [:create, :show, :update,:delete, :index]
   
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'
