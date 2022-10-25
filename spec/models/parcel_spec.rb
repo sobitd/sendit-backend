@@ -10,5 +10,5 @@ RSpec.describe Parcel, type: :model do
 end
 
 describe Parcel do
-  it { should belong_to(:user) }
+  it { should have_many(:orders) }
 end
