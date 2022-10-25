@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   validates_presence_of :first_name, :last_name, :phone_number, :username, :password
   validates :username, uniqueness: true
   validates :password, length: { in: 6..20 }
@@ -8,5 +10,5 @@ class User < ApplicationRecord
                                      message: 'Only positive number without spaces are allowed'
   has_many :parcels
   
-  has_secure_password
+  
 end
