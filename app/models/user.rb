@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :parcels 
+  has_many :parcels, dependent: :destroy
   # belongs_to :order, optional: true
 
   validates_presence_of :first_name, :last_name, :phone_number, :username, :password
