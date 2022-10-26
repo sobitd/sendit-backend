@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :phone_number, :username, :password
+  has_secure_password
+  validates_presence_of :first_name, :last_name, :phone_number, :username
   validates :username, uniqueness: true
   validates :password, length: { in: 6..20 }
   validates :email_address, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/

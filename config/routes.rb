@@ -3,13 +3,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'sessions#home'
+  #root 'sessions#home'
 
-  resources :users, only: [:create, :show, :index]
-  resources :parcels, only: [:create, :show, :update,:delete, :index]
-  
-  get '/login', to: 'sessions#login'
-  post '/login', to: 'sessions#create'
-  post '/logout', to: 'sessions#destroy'
-  get '/logout', to: 'sessions#destroy'
+  resources :users, only: [:create]
+#  resources :parcels, only: [:create, :show, :update,:delete, :index]
+
+post '/login', to: 'authentication#log'
+get '/users', to: 'users#profile'
+post "/users", to: 'users#create'
+
 end

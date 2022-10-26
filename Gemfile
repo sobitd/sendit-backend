@@ -29,6 +29,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "rack-cors"
+
+gem "bcrypt"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -79,3 +83,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'shoulda-matchers', '~> 5.2'
 end
+
+
+gem "jwt"
+gem "listen"
+
+gem "active_model_serializers"
+
+gem "faker"
+gem "spring"
