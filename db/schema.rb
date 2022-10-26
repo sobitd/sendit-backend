@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_25_092219) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_26_041520) do
   create_table "bills", force: :cascade do |t|
     t.float "total_cost"
     t.datetime "created_at", null: false
@@ -106,6 +106,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_092219) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "isAdmin"
   end
 
   add_foreign_key "deliveries", "bills"
