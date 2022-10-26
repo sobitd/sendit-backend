@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_26_024740) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_26_170959) do
   create_table "carts", force: :cascade do |t|
     t.integer "kg_charge"
     t.integer "km_charge"
@@ -58,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_024740) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.integer "total_cost"
+    t.integer "parcel_id", null: false
+    t.index ["parcel_id"], name: "index_orders_on_parcel_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -79,8 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_024740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
-    t.index ["category_id"], name: "index_parcels_on_category_id"
     t.index ["user_id"], name: "index_parcels_on_user_id"
   end
 
@@ -101,6 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_024740) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "isAdmin"
   end
 
   add_foreign_key "carts", "orders"
@@ -110,7 +111,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_024740) do
   add_foreign_key "deliveries", "parcel_carriers"
   add_foreign_key "notifications", "orders"
   add_foreign_key "notifications", "users"
+  add_foreign_key "orders", "parcels"
   add_foreign_key "orders", "users"
-  add_foreign_key "parcels", "categories"
   add_foreign_key "parcels", "users"
 end

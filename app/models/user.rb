@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  has_many :parcels
-  has_many :carts, through: :parcels
-  belongs_to :order, optional: true
+  has_many :parcels 
+  # belongs_to :order, optional: true
 
   validates_presence_of :first_name, :last_name, :phone_number, :username, :password
   validates :username, uniqueness: true

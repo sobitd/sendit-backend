@@ -71,9 +71,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'shoulda-matchers', '~> 5.2'
+  gem 'net-http', '~> 0.2.2'
 end
