@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :parcels
+  has_many :carts, through: :parcels
+  belongs_to :order, optional: true
+
   validates_presence_of :first_name, :last_name, :phone_number, :username, :password
   validates :username, uniqueness: true
   validates :password, length: { in: 6..20 }
@@ -6,6 +10,4 @@ class User < ApplicationRecord
   number_regex = /\d[0-9]\)*\z/
   validates_format_of :phone_number, with: number_regex,
                                      message: 'Only positive number without spaces are allowed', uniqueness: true
-  has_many :orders
-  has_many :parcels, through: :orders
 end
