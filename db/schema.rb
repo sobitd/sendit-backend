@@ -106,7 +106,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_041520) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "isAdmin"
+    t.boolean "isAdmin", default: false
   end
 
   add_foreign_key "deliveries", "bills"

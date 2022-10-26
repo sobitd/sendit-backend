@@ -14,7 +14,8 @@ User.create([
     "email_address": "datazamp6@gmail.com",
     "phone_number": 0737466577,
     "username": "apo",
-    "password_digest": "boilerplate5554",
+    "password": "boilerplate5554",
+    "isAdmin": "false"
     },
     {
         "first_name": "Faka",
@@ -22,7 +23,13 @@ User.create([
         "email_address": "datagam@gmail.com",
         "phone_number": 0732466577,
         "username": "redo",
-        "password_digest": "boilerplate99944"
+        "password": "boilerplate99944",
+        "isAdmin": "true"
     }
 ])
+# User.create!([
+#     {first_name:"dan",last_name:"mike",email_address:"dan@mail.com",phone_number:1334512,username:"dan1 ",password:"dan123", isAdmin: true},
+#     {first_name:"john",last_name:"doe",email_address:"john@mail.com",phone_number:1334512,username:"john1",password:"john123", isAdmin: false},
+#     {first_name:"jane",last_name:"lucy",email_address:"jane@mail.com",phone_number:1234572,username:"jane1",password:"jane123", isAdmin: false}
+#     ])
 puts "done"
