@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 #  resources :parcels, only: [:create, :show, :update,:delete, :index]
 
-post '/login', to: 'authentication#log'
+post '/login', to: 'authentication#create'
 get '/users', to: 'users#profile'
 post "/users", to: 'users#create'
 

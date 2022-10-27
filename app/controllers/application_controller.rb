@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
+    #include ActionControlller::Cookies
    before_action :authorized
    protect_from_forgery with: :null_session
 
     def encode_token(payload)
-        JWT.encode(payload, 'babalao')
+        JWT.encode(payload, 'alpha')
     end
 
     def auth_header
@@ -12,9 +13,9 @@ class ApplicationController < ActionController::Base
 
     def decoded_token
         if auth_header
-            token = auth_header.split('')[1]
+            token = auth_header.split(' ')[1]
             begin
-                JWT.decode(token, 'babalao',true, algorithm: 'HS256')
+                JWT.decode(token, 'alpha',true, algorithm: 'HS256')
             rescue JWT::DecodeError
                     nil
             end
