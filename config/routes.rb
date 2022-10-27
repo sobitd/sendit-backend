@@ -4,18 +4,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   # root to: "main#index"
- 
-  get "/me", to: "users#show"
+
+  get '/me', to: 'users#show'
   root to: 'users#index'
   get '/signup', to: 'user#new'
   post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  
-  
+
   resources :sessions, only: [:create]
   resources :users do
     resources :parcels
   end
- end
+end
