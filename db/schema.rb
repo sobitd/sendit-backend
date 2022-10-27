@@ -58,8 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_170959) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.integer "total_cost"
-    t.integer "parcel_id", null: false
-    t.index ["parcel_id"], name: "index_orders_on_parcel_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -111,7 +109,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_170959) do
   add_foreign_key "deliveries", "parcel_carriers"
   add_foreign_key "notifications", "orders"
   add_foreign_key "notifications", "users"
-  add_foreign_key "orders", "parcels"
   add_foreign_key "orders", "users"
   add_foreign_key "parcels", "users"
 end
