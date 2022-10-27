@@ -21,7 +21,11 @@ class SessionsController < ApplicationController
 
   # logging out the user
   def destroy
-    session.delete :user_id
-    head :no_content
+    if session[:user_id]
+      session.delete :user_id
+      head :no_content
+    else
+      render json: { errors: ['You are logged out. Please login'] }, status: :unauthorized
+    end
   end
 end

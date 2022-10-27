@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-  
-  skip_before_action :authorize, only: :create
+  # skip_before_action :authorize, only: :create
   # skip_before_action :verify_authenticity_token
 
   def index
-    user = User.all
-    render json: user, status: :ok
+    users = User.all
+    render json: users, status: :ok
   end
 
   def show
-    user = User.find_by(id: session[:user_id])
-    render json: user, status: :ok
+    user = User.find(params[:id])
+    render json: user
   end
 
   # #Signing up a new user
@@ -46,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
+    params.permit(
       :first_name,
       :last_name,
       :email_address,
