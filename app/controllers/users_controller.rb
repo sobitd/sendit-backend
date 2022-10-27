@@ -19,15 +19,12 @@ class UsersController < ApplicationController
     if user.valid?
       session[:user_id] = user.id
       render json: user, status: :created
-    else
+     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
-  # def admin
-  #     if !user.isAdmin?
-  #         redirect_to
-  # end
+  
 
   # # autologin feature
   # if the user leaves the page, they will not be logged out
@@ -42,6 +39,19 @@ class UsersController < ApplicationController
     user.delete
     head :no_content
   end
+##trying admin unlocks
+  def update
+    user = User.find(id: session[:user_id])
+   
+    if
+        user.isAdmin == true
+        user.update(change_params)
+        
+    else
+      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+ 
 
   private
 
@@ -55,5 +65,13 @@ class UsersController < ApplicationController
       :password,
       :isAdmin
     )
+  end
+
+def change_params
+  params.permit(
+    
+    :username
+    
+  )
   end
 end
