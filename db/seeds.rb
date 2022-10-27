@@ -5,42 +5,31 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 require 'faker'
 
-kamau = User.create(first_name: Faker::Name.first_name,
-                    last_name: Faker::Name.last_name,
-                    email_address: Faker::Internet.email,
-                    phone_number: Faker::PhoneNumber.phone_number,
-                    username: Faker::Internet.username,
-                    password: Faker::Internet.password)
+puts "Seeding"
+User.create([
+    {
+    "first_name": "Koni",
+    "last_name": "Bobi",
+    "email_address": "datazamp6@gmail.com",
+    "phone_number": 0737466577,
+    "username": "apo",
+    "password": "boilerplate5554",
+    "isAdmin": "false"
+    },
+    {
+        "first_name": "Faka",
+        "last_name": "Tobi",
+        "email_address": "datagam@gmail.com",
+        "phone_number": 0732466577,
+        "username": "redo",
+        "password": "boilerplate99944",
+        "isAdmin": "true"
+    }
+])
 
-kimani = User.create(first_name: Faker::Name.first_name,
-                     last_name: Faker::Name.last_name,
-                     email_address: Faker::Internet.email,
-                     phone_number: Faker::PhoneNumber.phone_number,
-                     username: Faker::Internet.username,
-                     password: Faker::Internet.password)
-
-kiptoo = User.create(first_name: Faker::Name.first_name,
-                     last_name: Faker::Name.last_name,
-                     email_address: Faker::Internet.email,
-                     phone_number: Faker::PhoneNumber.phone_number,
-                     username: Faker::Internet.username,
-                     password: Faker::Internet.password)
-
-kimtai =  User.create(first_name: Faker::Name.first_name,
-                      last_name: Faker::Name.last_name,
-                      email_address: Faker::Internet.email,
-                      phone_number: Faker::PhoneNumber.phone_number,
-                      username: Faker::Internet.username,
-                      password: Faker::Internet.password)
-
-kiprop =  User.create(first_name: Faker::Name.first_name,
-                      last_name: Faker::Name.last_name,
-                      email_address: Faker::Internet.email,
-                      phone_number: Faker::PhoneNumber.phone_number,
-                      username: Faker::Internet.username,
-                      password: Faker::Internet.password)
 
 parcel_one = Parcel.create(recipient_address: Faker::Address.street_address,
                             recipient_name: Faker::Name.name,
@@ -81,3 +70,5 @@ parcel_five = Parcel.create(recipient_address: Faker::Address.street_address,
                              from: Faker::Measurement.length,
                              destination: Faker::Measurement.length,
                              user_id: 5)
+
+puts "done"

@@ -24,6 +24,10 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+gem 'net-http', '~> 0.2.2'
+#to use password protection
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
