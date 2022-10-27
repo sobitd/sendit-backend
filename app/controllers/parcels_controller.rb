@@ -2,20 +2,17 @@ class ParcelsController < ApplicationController
   before_action :get_user
   before_action :set_parcel, only: %i[show edit update destroy]
 
-   # GET /orders 
-   def  index 
-    @parcels = @user.parcels.
-   end
+  # GET /parcels
+  def index
+    @parcels = @user.parcels
+  end
 
-  # GET /orders/new
+  # GET /parcels/new
   def new
     @parcel = @user.parcels.build
   end
 
-  # GET /orders/1/edit
-  def edit; end
-
-  # POST /orders
+  # POST /parcels
   def create
     @parcel = @user.parcels.build(post_params)
 
@@ -32,25 +29,27 @@ class ParcelsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
-  def update 
-    respond_to do |format| 
-        if @parcel.update(post_params)
-            format.html { redirect_to user_parcel_path(@user),notice: 'Parcel delivery order was successfully updated.' }
-            format.json { render :show, status: :ok, location: @parcel }
-        else  
-            format.html { render :edit } 
-            format.json { render json: @parcel.errors, status: :unprocessable_entity }
-         end
+  # PATCH/PUT /parcels/1
+  # PATCH/PUT /parcels/1.json
+  def update
+    respond_to do |format|
+      if @parcel.update(post_params)
+        format.html do
+          redirect_to user_parcel_path(@user), notice: 'Parcel delivery order was successfully updated.'
+        end
+        format.json { render :show, status: :ok, location: @parcel }
+      else
+        format.html { render :edit }
+        format.json { render json: @parcel.errors, status: :unprocessable_entity }
       end
-    end 
+    end
+  end
 
-  def destroy 
-    @parcel.destroy  
-    respond_to do |format| 
-        format.html { redirect_to user_parcels_path(@user), notice: 'Parcel delivery order was successfully canceled' }
-        format.json { head :no_content }
+  def destroy
+    @parcel.destroy
+    respond_to do |format|
+      format.html { redirect_to user_parcels_path(@user), notice: 'Parcel delivery order was successfully canceled' }
+      format.json { head :no_content }
     end
   end
 
@@ -68,5 +67,4 @@ class ParcelsController < ApplicationController
   def post_params
     params.require(:parcel).permit(:body, :user_id)
   end
-
-end 
+end
