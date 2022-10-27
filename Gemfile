@@ -82,3 +82,9 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.2'
   gem 'net-http', '~> 0.2.2'
 end
+
+group :production do
+  gem 'pg'
+  gem 'sinatra-contrib', require: false 
+end
+
