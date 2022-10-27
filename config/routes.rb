@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   # root to: "main#index"
-
  
   get "/me", to: "users#show"
   root to: 'users#index'
