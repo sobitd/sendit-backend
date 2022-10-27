@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..20 }
   validates :email_address, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
   number_regex = /\d[0-9]\)*\z/
-  validates_format_of :phone_number, with: number_regex,
+  validates_format_of :phone_number, with: number_regex
+end
