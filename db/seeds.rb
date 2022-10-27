@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'faker'
+
 puts "Seeding"
 User.create([
     {
@@ -27,9 +29,46 @@ User.create([
         "isAdmin": "true"
     }
 ])
-# User.create!([
-#     {first_name:"dan",last_name:"mike",email_address:"dan@mail.com",phone_number:1334512,username:"dan1 ",password:"dan123", isAdmin: true},
-#     {first_name:"john",last_name:"doe",email_address:"john@mail.com",phone_number:1334512,username:"john1",password:"john123", isAdmin: false},
-#     {first_name:"jane",last_name:"lucy",email_address:"jane@mail.com",phone_number:1234572,username:"jane1",password:"jane123", isAdmin: false}
-#     ])
+
+
+parcel_one = Parcel.create(recipient_address: Faker::Address.street_address,
+                            recipient_name: Faker::Name.name,
+                            recipient_contact: Faker::PhoneNumber.phone_number,
+                            weight: Faker::Number.number,
+                            from: Faker::Measurement.length,
+                            destination: Faker::Measurement.length,
+                            user_id: 1)
+
+parcel_two = Parcel.create(recipient_address: Faker::Address.street_address,
+                            recipient_name: Faker::Name.name,
+                            recipient_contact: Faker::PhoneNumber.phone_number,
+                            weight: Faker::Number.number,
+                            from: Faker::Measurement.length,
+                            destination: Faker::Measurement.length,
+                            user_id: 2)
+
+parcel_three = Parcel.create(recipient_address: Faker::Address.street_address,
+                              recipient_name: Faker::Name.name,
+                              recipient_contact: Faker::PhoneNumber.phone_number,
+                              weight: Faker::Number.number,
+                              from: Faker::Measurement.length,
+                              destination: Faker::Measurement.length,
+                              user_id: 3)
+
+parcel_four = Parcel.create(recipient_address: Faker::Address.street_address,
+                             recipient_name: Faker::Name.name,
+                             recipient_contact: Faker::PhoneNumber.phone_number,
+                             weight: Faker::Number.number,
+                             from: Faker::Measurement.length,
+                             destination: Faker::Measurement.length,
+                             user_id: 4)
+
+parcel_five = Parcel.create(recipient_address: Faker::Address.street_address,
+                             recipient_name: Faker::Name.name,
+                             recipient_contact: Faker::PhoneNumber.phone_number,
+                             weight: Faker::Number.number,
+                             from: Faker::Measurement.length,
+                             destination: Faker::Measurement.length,
+                             user_id: 5)
+
 puts "done"

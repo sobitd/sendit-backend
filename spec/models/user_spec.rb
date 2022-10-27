@@ -14,4 +14,9 @@ describe User do
     user = User.reflect_on_association(:parcels)
     expect(user.macro).to eq(:has_many)
   end
+
+  it 'should belong to order' do 
+    user = User.reflect_on_association(:order)
+    expect(user.macro).to eq(:belongs_to)
+  end
 end
