@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
   # skip_before_action :authorized, only: [:create]
   # disables CSRF middleware (an error that came up severally when making requests to db)
 
-  before_action :authorize
-  skip_before_action :authorize, only: :create
+ # before_action :authorize
+  #skip_before_action :authorize, only: :create
   # skip_before_action :verify_authenticity_token
 
   # logging in users

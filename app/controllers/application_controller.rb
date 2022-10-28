@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::API
-  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  skip_before_action :verify_authenticity_token
+  
   include ActionController::Cookies
-  wrap_parameters format: []
-  before_action :authorize
+  
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+  
+  #before_action :authorize
+
 
   # only authorized users can login especially using the autologin feauture
   private

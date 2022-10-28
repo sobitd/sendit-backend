@@ -46,6 +46,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.0.4)
       activesupport (= 7.0.4)
       globalid (>= 0.3.6)
@@ -82,6 +87,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -105,6 +112,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonapi-renderer (0.2.2)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -220,6 +228,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.5.3-x86_64-linux)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -258,6 +267,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.13)
   bcrypt (~> 3.1, >= 3.1.12)
   bootsnap
   capybara
@@ -266,15 +276,17 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   net-http (~> 0.2.2)
-  pg
+  pg (~> 1.1)
   phonelib (~> 0.7.4)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  railties (~> 7.0, >= 7.0.4)
   rspec-rails (~> 6.0, >= 6.0.1)
   selenium-webdriver
   shoulda-matchers (~> 5.2)
   sinatra-contrib
   sprockets-rails
+  sqlite3
   stimulus-rails
   truemail (~> 2.7, >= 2.7.5)
   turbo-rails
@@ -283,7 +295,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.0.0p0
 
 BUNDLED WITH
    2.3.24
