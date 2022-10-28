@@ -280,7 +280,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   net-http (~> 0.2.2)
-  pg
+  pg (~> 1.4, >= 1.4.4)
   phonelib (~> 0.7.4)
   puma (~> 5.0)
   rails (~> 7.0.4)

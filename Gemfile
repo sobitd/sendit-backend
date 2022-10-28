@@ -86,7 +86,7 @@ end
 group :production do
   gem 'sinatra-contrib', require: false 
   gem 'active_model_serializers', '~> 0.10.13'
-  gem 'pg'
+  gem 'pg', '~> 1.4', '>= 1.4.4'
   gem 'rails_12factor'
 end
 
