@@ -1,12 +1,8 @@
 class ApplicationController < ActionController::API
-  skip_before_action :verify_authenticity_token
-  
-  include ActionController::Cookies
-  
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-  
-  #before_action :authorize
-
+  include ActionController::Cookies
+  wrap_parameters format: []
+  before_action :authorize
 
   # only authorized users can login especially using the autologin feauture
   private
@@ -16,7 +12,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorize
-    @current_user = User.find_by(id: session[:user_id])
-    render json: { errors: ['Not Authorized'] }, status: :unathorized unless @current_user
+    return
+    render json: { errors: ['Not Authorized'] }, status: :unathorized unless session.include? :user_id
   end
 end
