@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # root to: "main#index"
  
-  get "/me", to: "users#show"
+  get '/users/:id', to: "sessions#show"
   root to: 'users#index'
   get '/signup', to: 'user#new'
   post '/signup', to: 'users#create'
