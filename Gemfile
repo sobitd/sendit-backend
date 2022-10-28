@@ -81,7 +81,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'shoulda-matchers', '~> 5.2'
   gem 'net-http', '~> 0.2.2'
-  gem 'sqlite3'
 end
 
 group :production do
