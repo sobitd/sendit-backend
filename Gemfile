@@ -1,17 +1,19 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby "3.0.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
+
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
+gem 'railties', '~> 7.0', '>= 7.0.4'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -23,6 +25,9 @@ gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+
+#to use password protection
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -56,6 +61,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'phonelib', '~> 0.7.4'
+  gem 'truemail', '~> 2.7', '>= 2.7.5' 
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -69,4 +76,18 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+  gem 'shoulda-matchers', '~> 5.2'
+  gem 'net-http', '~> 0.2.2'
+end
+
+group :production do
+  gem 'sinatra-contrib', require: false 
+  gem 'active_model_serializers', '~> 0.10.13'
+  gem 'sqlite3'
+end
+

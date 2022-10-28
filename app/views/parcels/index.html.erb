@@ -1,0 +1,40 @@
+
+<h1>Parcels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parcel Delivery Order</th>
+      <th colspan="12"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parcels.each do |parcel| %>
+
+      <th> Senders Details</th>
+      <tr>
+      <th>First Name:</th>
+        <td><%= parcel.user.first_name %></td>
+        <th>Last Name:</th>
+        <td><%= parcel.user.last_name %></td>
+      </tr>
+      <th>Parcel Recipient Details </th>
+      <tr>
+        <td><%= parcel.recipient_name%></td>
+        <td><%= parcel.recipient_address %></td>
+        <td><%= parcel.recipient_contact %></td>
+        </tr>
+        <td><%= parcel.from %></td>
+        <td><%= parcel.destination %></td>
+        <td><%= parcel.weight %></td>
+        <td><%= link_to 'Show User', [@user] %></td>
+        <td><%= link_to 'Edit Parcel', edit_user_parcel_path(@user, parcel) %></td>
+        <td><%= link_to 'Cancel Parcel', [@user, parcel], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_user_parcel_path(@user) %>
