@@ -7,8 +7,6 @@ ruby "3.0.0"
 gem "rails", "~> 7.0.4"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -88,6 +86,7 @@ end
 group :production do
   gem 'sinatra-contrib', require: false 
   gem 'active_model_serializers', '~> 0.10.13'
-  gem 'sqlite3'
+  gem 'pg', '~> 1.4', '>= 1.4.4'
+  gem 'rails_12factor'
 end
 

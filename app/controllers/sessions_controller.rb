@@ -3,9 +3,14 @@ class SessionsController < ApplicationController
   # disables CSRF middleware (an error that came up severally when making requests to db)
 
  # before_action :authorize
-  #skip_before_action :authorize, only: :create
+  skip_before_action :authorize, only: :create
   # skip_before_action :verify_authenticity_token
 
+  def show
+    user = User.find_by(id: session[:user_id])
+    render json: user, status: :ok
+  end
+  
   # logging in users
   def create
     user = User.find_by(email_address: params[:email_address])
